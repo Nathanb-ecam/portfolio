@@ -1,0 +1,81 @@
+
+
+/* ABOUT ME SECTION  */
+
+
+
+.aboutme-section-content .about-intro{
+    display: flex;
+}
+.aboutme-section-content .about-intro p{
+    font-weight: lighter;
+    color: var(--light-gray);
+    
+}
+.aboutme-section-content .about-intro p span{
+    color: white;
+}
+
+
+
+.aboutme-section-content img{
+    object-fit: cover;
+    margin-left: 2rem;
+    width:  150px;
+    height: 150px;
+    /* border-radius: 50%; */
+    border-radius: 20px;
+    /* margin-right: 5rem; */
+}
+
+
+.timeline{
+    margin-top: 1rem;
+    position: relative;
+    width: 5px;    
+    background: rgba(255, 255, 255, 0.132);
+    border-radius: 5000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.timeline-item{
+    margin: 10px 0;
+    white-space: nowrap;
+    display: flex;
+    gap: 12px;
+    align-items:center;
+}
+
+.timeline-item .dot{
+    min-width:  5px;
+    max-width:  5px;
+    min-height: 5px;
+    max-height: 5px;
+    scale: 2;
+    border-radius: 50%;
+    background: var(--primary);
+    /* z-index: 1;s */
+}
+
+.timeline-item .item-text{
+    font-weight: lighter;
+    color: var(--light-gray);
+}
+
+
+.timeline-item:hover .item-wrapper label{
+    color: var(--primary);
+}
+
+.timeline-item{
+    opacity: 0;
+    transform: translate(100px,20px);
+    transition: all 1s ease-in-out;
+}
+.timeline-item.show{
+    opacity: 1;
+    transform: translate(0,0);
+}

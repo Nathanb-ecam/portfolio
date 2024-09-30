@@ -1,0 +1,180 @@
+/* SKILLS AND TOOLS SECTION  */
+.skills-section-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.folders-wrapper, .icons-circle-wrapper{
+    min-width: 50%;
+    max-width: 50%;
+    
+}
+
+.folders{
+    --line-border-radius:50px;
+    --line-width:5px;
+    display: flex;    
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+    background: var(--folder-line-color);
+    width: var(--line-width);    
+    border-radius: var(--line-border-radius);
+}
+.folder{
+    position: relative;  
+    margin-left: 20px;  
+    display: flex;    
+    flex-direction: column;
+}
+
+.folder-name{
+    display: flex;
+    align-items: center;
+    position: relative;
+    --horiz-line-length:25px;    
+    
+}
+
+
+.folder-name .name::before{    
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--horiz-line-length);
+    height: var(--line-width);
+    transform: translate(-12px,-50%);
+    background: var(--folder-line-color);
+    border-radius: var(--line-border-radius);
+}
+
+.name{
+    white-space: nowrap;
+    margin-left: calc( var(--horiz-line-length) - 10px);
+}
+
+.files{
+    margin-left: 35px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    background: var(--folder-line-color);  
+    width: var(--line-width);
+    height: 1.65rem;    
+}
+
+.three{height: 3rem;}
+.four{height: 4rem;}
+.five{height: 5rem;}
+.six{height: 6rem;}
+.seven{height:7rem;}
+
+.file-wrapper{
+    position: relative;    
+    /* left: -100px; */
+}
+
+
+.file{
+    --file-line-length:30px;
+    white-space: nowrap;
+    margin-left: calc(15px + var(--file-line-length));
+
+}
+
+.file::before{
+    content: '';
+    position: absolute;
+    top:  50%;
+    left: 0%;
+    margin-left: 8px;
+    transform: translateY(-50%);
+    width: var(--file-line-length);
+    height: var(--line-width);
+    background: var(--folder-line-color);
+    border-radius: var(--line-border-radius);
+}
+
+
+
+#web{color: rgba(11, 160, 223, 0.729);}
+#mobile{color: rgba(8, 120, 168, 0.729);}
+#python{color: rgb(7, 113, 158);}
+#tools{color: rgb(7, 103, 144);}
+
+#web,
+#mobile,
+#python,
+#tools{
+    color:var(--primary);
+    /* border: 1px solid green; */
+
+}
+/* #mobile{color: var(--primary-light);} */
+/* #python{color: var(--primary-light);} */
+/* #tools{color: var(--primary-light);} */
+/* #web{color: var(--primary);} */
+
+
+/* -----------------------  ICONS CIRCLE ----------------------- */
+
+.icons-circle-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.icons-outer-circle{
+    position: relative;
+    width:  300px;
+    height: 300px;
+    background: var(--light-white);
+    /* background: green; */
+    border-radius: 50%;
+    z-index: 1;
+    animation: rotate 25s linear forwards infinite;
+}
+
+.icons-outer-circle:hover{
+    animation-play-state: paused;
+}
+
+.icons-inner-circle{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width:  280px;
+    height: 280px;
+    background: var(--darker-blue);    
+    border-radius: 50%;
+}
+
+.circle-item{
+    position: absolute;
+    --icon-size: 80px;
+    background: red;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    
+    line-height: var(--icon-size);
+    text-align: center;
+    /* border-radius: 50%; */
+}
+.ic1{transform: rotate(0deg)   translateX(150px);}
+.ic2{transform: rotate(72deg)  translateX(150px);}
+.ic3{transform: rotate(144deg) translateX(150px);}
+.ic4{transform: rotate(216deg) translateX(150px);}
+.ic5{transform: rotate(288deg) translateX(150px);}
+
+@keyframes rotate{
+    /* 0%{transform: rotate(90deg);}
+    33%{transform: rotate(180deg);}
+    66%{transform: rotate(270deg);}
+    100%{transform: rotate(360deg);} */
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+    
+}
