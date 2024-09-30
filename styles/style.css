@@ -95,23 +95,14 @@ header{
 }
 
 
-.header-wrapper div.name{    
-    font-family: var(--font-secondary);
-    font-size: .8rem;
-    padding: 0;    
-    /* color: var(--light-gray);*/
-    color: var(--primary); 
-    /* background: linear-gradient(to right, var(--primary), var(--yellow));
+.header-wrapper .post{
+    font-weight: bold;
+    /* background: linear-gradient(to right, var(--primary), var(--gradient-orange));
     background-clip: text;
     color: var(--light-white); */
+    color: var(--primary);
+    font-size: 1.2rem;
 }
-
-.header-wrapper div.name::after{
-    content: '';
-    width: 200px;
-    position: absolute;
-}
-
 
 
 .header-wrapper ul{
@@ -157,7 +148,11 @@ section > div:first-child:not(.call-text){
 }
 
 
-.timeline,.folders, .about-intro{
+.about-intro img{
+    margin-right:1.5rem ;
+}
+
+.timeline{
     margin-left: 2rem;
 }
 
@@ -194,45 +189,61 @@ section div.title-ending-line{
 
 /* --------------- HERO SECTION ---------------  */
 .hero{
-    height: calc(100vh -  var(--header-height));
-    margin-top: calc(8vh + var(--header-height));
+    /* height: calc(100vh -  var(--header-height)); */
+    height: 100vh;
+    /* margin-top: calc(8vh + var(--header-height)); */
     color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: 2.5rem;
+    justify-content: center;    
+    align-items: center;    
     font-weight: bold;
     text-align: center;
 }
 
-
-
-
-.hero .call-text{
-    width: 80%;    
+.top-hero-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hero .call-text h2{
-    font-size: 1.5rem;
-    font-weight: bold;
+.top-hero-wrapper img{
+    object-fit: contain;
+    width:  300px;    
+    height: 300px;    
+    border-radius: 50%;
+}
+
+.call-text{
+    text-align: start;
+}
+.call-text .name{
+    font-size: 3rem;
     font-family: var(--font-primary);
+    font-weight: bold;
+    color: var(--light-white);
 }
 
-.hero .call-text h2 span{
-    color: var(--primary);
-    text-transform: capitalize;    
+.call-text h2{
+    /* color: var(--primary); */
+    letter-spacing: .6rem;
+    font-size: 1.5rem;
+    color: rgba(33, 137, 228, 0.562);
+    margin-bottom: 2rem;
+    
 }
 
-.hero .call-text .name{
-    font-size: 1rem;
+.call-text p{
+    color: var(--light-gray);
+    font-size: 2rem;
 }
 
-.hero .call-text .name span{
-    /* font-size: 2.5rem; */
+.call-text p span{
+    color:var(--primary);
 }
-
 
 .hero .socials{    
+    font-size: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;            
@@ -244,7 +255,7 @@ section div.title-ending-line{
     box-shadow: 3px 3px 0  var(--primary); */
     border-radius: 50px;
     margin-bottom: 1rem;    
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     scale: .5;
 }
 
@@ -288,7 +299,7 @@ section{
 }
 
 section:not(.hero){
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     margin-bottom: 5rem;
 }
 
@@ -307,10 +318,7 @@ section:not(.hero){
     /* transition: opacity 0.5s ease, transform 0.5s ease; */
 }
 
-.call-text h2{
-    opacity: 0;
-    transform: translate(100px,0);
-}
+
 .call-text div.name{
     transform: translate(0,-100px);
     opacity: 0;
@@ -320,11 +328,7 @@ section:not(.hero){
     transition: .7s ease-in-out ;
     transform: translate(0,0);
 }
-.call-text h2.show{
-    opacity: 1;
-    transition: .7s ease-in-out ;
-    transform: translate(0,0);
-}
+
 
 .my-contacts{
     opacity: 0;
@@ -363,8 +367,11 @@ footer ul::marker{
 /* --------------- MOBILE --------------- */
 
 @media(max-width:850px){
-    .hero{
+    /* .hero{
         justify-content: center;
+    } */
+    .top-hero-wrapper{
+        flex-direction: column;
     }
 
     .header-wrapper{
@@ -396,9 +403,7 @@ footer ul::marker{
         scale: 1;
     }
 
-    div.projects-section-content{
-        justify-content: center;
-    }
+
 
 
 
@@ -408,15 +413,8 @@ footer ul::marker{
     .hero .socials .icons .ic:nth-child(4){right:0;top: 50%;}
 }
 
-@media(max-width:1200px){
-    /* .header-wrapper{
-        padding: 0;
-        margin: 0;
-    } */
-    /* .header-wrapper ul li{
-        
-        text-align: center;
-        margin: 0 5px;
-        padding: 5px 10px;
-    } */
+@media(max-width:1000px){
+    div.projects-section-content{
+        justify-content: center;
+    }
 }

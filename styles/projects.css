@@ -20,14 +20,15 @@
 
 .project-card .project-image-wrapper{
     padding: 5px 2px;
-    border: 1px solid var(--light-gray);
-    border-radius: 5px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
 .project-card .project-image-wrapper img{
+    border-radius: 5px;
+    border: 1px solid var(--light-gray);
     object-fit: fill;
     width: calc(var(--card-width) - 4px);
     height: calc(200px - 2px);    
