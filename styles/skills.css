@@ -12,22 +12,35 @@
     --line-border-radius:50px;
     --line-width:5px;
     display: flex;   
+    /* justify-content: center; */
     flex-wrap: wrap;     
     gap: .8rem 0.6rem;
     
 }
 .folder{    
+    color: var(--primary);        
+    font-weight: bold;
     flex-grow: 1;
+    /* flex-basis: 100%; */
     padding: .3rem 1rem;    
     position: relative;   
     background: rgba(0, 0, 0, 0.231);   
-    outline: 1px solid var(--light-white); 
+    background: rgba(0, 0, 0, 0.025);   
+    border: 1px solid var(--light-white); 
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 var(--darker-blue);    
 }
 
-.folder label[id]{
-    color:var(--primary);    
+/* .folder:nth-child(1){max-width: 35%;}
+.folder:nth-child(3){max-width: 55%;}
+.folder:nth-child(5){max-width: 75%;} */
 
-}
+/* .folder #embbeded{color:var(--pink);}
+.folder #python{color:var(--yellow);}
+.folder #tools{color:var(--green);}
+.folder #mobile{color:var(--primary);}
+.folder #database{color:var(--primary);}
+.folder #web{color:red;} */
 
 
 
@@ -59,12 +72,17 @@
     white-space: nowrap;
     /* margin-left: calc(15px + var(--file-line-length)); */
     background: var(--light-white);
+    color: var(--light-gray);        
     padding: .4rem .7rem;
     border-radius: 5px;    
+    font-size: .8rem;
 
 }
 
-
+#skills-tools p{
+    margin: 1rem 0;
+    color: gray;
+}
 
 
 #web-folder{

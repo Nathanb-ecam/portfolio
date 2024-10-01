@@ -4,32 +4,22 @@
 
 
 
-.aboutme-section-content .about-intro{
-    display: flex;
-}
-.aboutme-section-content .about-intro p{
+
+.aboutme-section-content .about-intro p{    
     font-weight: lighter;
     color: var(--light-gray);
     
 }
 .aboutme-section-content .about-intro p span{
     color: white;
+    font-weight: 400;
 }
 
 
-
-.aboutme-section-content img{
-    object-fit: cover;
-    margin-left: 2rem;
-    width:  150px;
-    height: 150px;
-    /* border-radius: 50%; */
-    border-radius: 20px;
-    /* margin-right: 5rem; */
-}
 
 
 .timeline{
+    margin: 0;
     margin-top: 1rem;
     position: relative;
     width: 5px;    
