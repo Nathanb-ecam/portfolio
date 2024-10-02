@@ -16,27 +16,48 @@
 }
 
 
-
-
-.timeline{
-    margin: 0;
+.timeline-wrapper{
+    width: 100%;
+    /* min-height: 500px; */
+    /* border: 1px solid red;     */
+    display: flex;
+    gap: .8rem;
     margin-top: 1rem;
+    overflow-wrap: break-word;
+}
+
+.vertical-line{
+    margin: 0;    
     position: relative;
     width: 5px;    
+    height: 175px;
+    /* width: 2%;     */
     background: rgba(255, 255, 255, 0.132);
     border-radius: 5000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 
 
-.timeline-item{
-    margin: 10px 0;
-    white-space: nowrap;
+.timeline-items-wrapper{    
+    /* border: 2px solid yellow; */
+    position: absolute;
+    left: 0;
+    width: 100%;
     display: flex;
+    flex-direction: column;
+}
+
+.timeline-item{
+    /* transform: translateX(-500px); */
+    margin: 10px 0;    
+    width: 100%;
+    display: flex;        
     gap: 12px;
     align-items:center;
+}
+
+.timeline-item label{
+    align-self: center;
+    /* white-space: nowrap; */
 }
 
 .timeline-item .dot{
@@ -55,6 +76,13 @@
     color: var(--light-gray);
 }
 
+.item-wrapper{            
+    display: flex;
+    gap: 1rem;
+}
+.item-wrapper, .item-text{
+
+}
 
 .timeline-item:hover .item-wrapper label{
     color: var(--primary);
