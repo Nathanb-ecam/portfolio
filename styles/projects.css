@@ -52,6 +52,8 @@
 
 .bottom-project-card .title-with-links{
     display: flex;
+    flex-wrap: wrap;
+    gap: .3rem 0;
     justify-content: space-between;    
 }
 .bottom-project-card .title-with-links label:not(.context){
