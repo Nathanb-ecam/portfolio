@@ -54,9 +54,9 @@ body{
 
 body{
     background: var(--darker-blue);
-    display: flex;
+    /* display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
     overscroll-behavior: none;
     /* overflow-x: hidden; */
 }
@@ -67,13 +67,16 @@ body{
 
 
 
-.main-wrapper{    
-    max-width: var(--max-width);
-
+.main-wrapper, header{
+    width: 100%;
+    margin-inline: auto;
+    /* max-width: var(--max-width); */
 }
 
+
 header{
-    width: 100vw;
+    /* width: 100%; */
+    /* width: 100vw; */
     background: var(--dark-blue);
     position: fixed;
     left: 0;
@@ -83,24 +86,23 @@ header{
     z-index: 2;
 }
 
-/* .header-wrapper */
-.header-wrapper{    
-    width: 100%;
-    margin: 0 var(--margin-global-l-r);    
-    max-width: calc(var(--max-width) - (2 * var(--margin-global-l-r)));
-    /* max-width: var(--max-width); */
+
+.header-wrapper{        
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;        
+    color: white;     
+    width: 100%;   
     background: var(--dark-blue);            
-    height: var(--header-height);    
-    padding:20px 0;
+    height: var(--header-height);   
+    /* width: 80%; */
+    /* margin-inline: .3rem;  */
+    padding:20px 0;        
     
 }
 
 
-.header-wrapper .post{
+.header-wrapper .name{
     font-weight: bold;    
     color: var(--primary);    
     font-size: clamp(.1rem,1vw + .5rem,1.5rem);
@@ -129,7 +131,7 @@ header{
 .header-wrapper ul a{    
     text-decoration: none;
     color: inherit;
-    font-size: clamp(.4rem,1vw + .1rem,.8rem);    
+    font-size: clamp(.6rem,1vw + .1rem,.8rem);    
 }
 
 .header-wrapper .resume-link{    
@@ -141,13 +143,18 @@ header{
 }
 
 
-
-
-/* SECTION GENERAL STYLES */
+.header-wrapper,
 section{
     
+    width: 100%;    
+    margin-inline: auto;
+    max-width: var(--max-width);    
+ 
+}
+
+/* SECTION GENERAL STYLES */
+section{    
     color: var(--white);    
-    margin: 0 var(--margin-global-l-r);      
 }
 
 
@@ -160,8 +167,7 @@ section > div:first-child:not(.call-text){
     /* margin-right:1.5rem ; */
 }
 
-
-.vertical-line{
+.timeline{
     margin-left: 2rem;
 }
 
@@ -198,12 +204,12 @@ section div.title-ending-line{
 
 /* --------------- HERO SECTION ---------------  */
 .hero{
-    /* height: calc(100vh -  var(--header-height)); */
-    height: 100vh;
-    /* margin-top: calc(8vh + var(--header-height)); */
+    height: calc(100vh -  var(--header-height));
+    /* height: 100vh;     */
+    margin-top: var(--header-height);
     color: white;
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     flex-direction: column;
     justify-content: center;    
     align-items: center;    
@@ -218,12 +224,10 @@ section div.title-ending-line{
 .top-hero-wrapper .image-wrapper{
     max-width: 40%;
 }
-.top-hero-wrapper{
+.top-hero-wrapper{        
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: .3rem;
-    margin-inline: var(--margin-global-l-r);
     align-items: center;
 }
 
@@ -245,7 +249,7 @@ section div.title-ending-line{
 }
 .call-text .name{
     /* font-size: 1.2rem; */
-    font-size: clamp(.1rem,1vw + .5rem,1rem);
+    font-size: clamp(.3rem,1vw + .5rem,1rem);
     font-family: var(--font-primary);
     font-weight: bold;
     color: var(--light-white);    
@@ -255,7 +259,7 @@ section div.title-ending-line{
 .call-text h2{
     /* color: var(--primary); */
     letter-spacing: .3rem;
-    font-size: clamp(.1rem,2vw + .1rem,1.3rem);
+    font-size: clamp(.8rem,2vw + .1rem,1.3rem);
     color: rgba(33, 137, 228, 0.562);
     margin-bottom: 2rem;
     
@@ -265,7 +269,7 @@ section div.title-ending-line{
     color: var(--light-gray);
     color: gray;
     color: var(--wheat);    
-    font-size: clamp(.1rem,2vw + .5rem,2rem);
+    font-size: clamp(1rem,2vw + .5rem,2rem);
 }
 
 .call-text p span{
@@ -275,7 +279,7 @@ section div.title-ending-line{
 }
 
 .hero .socials{    
-    font-size: clamp(1.8rem,2vw + 1rem,2.8rem);
+    font-size: clamp(2rem,2vw + 1rem,3rem);
     display: flex;
     flex-direction: column;
     align-items: center;            
@@ -360,8 +364,12 @@ footer ul li a{
 /* --------------- MOBILE --------------- */
 
 @media(max-width:1200px){
-    .top-hero-wrapper{
-        /* background: red; */
+    .header-wrapper{       
+        max-width: 90%;
+    }
+    section{
+        /* width: 90vw; */
+        /* max-width: none; */
     }
 }
 
@@ -379,11 +387,11 @@ footer ul li a{
 
 @media(max-width:900px){
     .top-hero-wrapper {
-        background: blue;
+        /* background: blue; */
     }
     .top-hero-wrapper .image-wrapper{
-        width:  250px;
-        height: 250px;
+        width:  280px;
+        height: 280px;
     }
 
 }
@@ -392,12 +400,52 @@ footer ul li a{
         
 }
 
-@media(max-width:600px){
-    .header-wrapper ul {
-        display: none;
-    }        
+@media(max-width:800px){         
+    .header-wrapper ul li,        
+    .header-wrapper ul a{                
+        padding: 0;
+    }
+    .header-wrapper ul .resume-link{
+        padding: .2rem .4rem;
+    }
+
+    /* .hero{margin-top: calc( 3rem + var(--header-height));} */
+    .top-hero-wrapper{     
+        /* margin-top: calc(500px + var(--header-height));    */
+        flex-direction: column;
+        justify-content: space-evenly;
+        /* gap: 0;         */
+    }
+    .top-hero-wrapper .image-wrapper{
+        order: -1;        
+        margin: 1rem 0;        
+        width:   400px;
+        height:  max-content;        
+    }
+    
+    
+    .top-hero-wrapper *{
+        text-align: center;
+    }
+
+    .call-text h2{
+        letter-spacing: .2rem;
+    }
 }
 
+@media(max-width: 400px){
+    .main-wrapper{
+        width: 100%;        
+        overflow-x: hidden;
+        
+    }
+}
+
+@media(max-width: 340px){
+    .header-wrapper li:not(.resume-link){
+        display: none;
+    }
+}
 
 
 
@@ -430,7 +478,7 @@ section:not(.hero){
 
 
 .call-text div.name{
-    transform: translate(0,-100px);
+    transform: translateX(-100px);
     opacity: 0;
 }
 .call-text div.show{
@@ -443,12 +491,12 @@ section:not(.hero){
 .my-contacts{
     opacity: 0;
     color: var(--wheat);
-    transform: translateY(300px);
+    transform: translateX(300px);
 }
 
 .my-contacts.show{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     transition: .7s ease-in-out;
 
 }
