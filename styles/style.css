@@ -5,6 +5,10 @@
     font-family: 'Open Sans',Arial;
 }
 
+html {
+    scroll-padding-top: 6vh;
+}
+  
 
 
 body{
@@ -143,7 +147,7 @@ header{
     color: var(--wheat);  */
     border: 2px solid var(--primary);
     border-radius: 5px;    
-    color: var(--primary); 
+    color: var(--primary);     
 }
 
 
