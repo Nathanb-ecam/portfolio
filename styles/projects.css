@@ -2,11 +2,12 @@
 
 .projects-section-content{
     /* background: blue; */
-    --card-width:440px;
+    --card-width:440px; /* THIS ONNNE */ 
+    --card-width:480px;
     width: 100%;
     display: flex;        
     flex-wrap: wrap;    
-    gap: 1.5rem calc(100% - 2 * var(--card-width));    
+    gap: 3.5rem calc(100% - 2 * var(--card-width));    
     /* gap: 5px clamp(
             10px, 
             calc(1000px - 2 * var(--card-width) + .1vw),
